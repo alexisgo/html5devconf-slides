@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Sample CSSS presentation</title>
+
+<!-- Don't alter this, CSSS needs it to work -->
+<link href="slideshow.css" rel="stylesheet" />
+
+<!-- Theme-specific styles go here (themes can be reused in multiple talks) -->
+<link href="theme.css" rel="stylesheet" />
+
+<!-- Talk-specific styles go here -->
+<link href="talk.css" rel="stylesheet" />
+<link href="spring.css" rel="stylesheet" />
+<link rel="stylesheet" href="pirate.css">
+
+
+<!-- Take care of prefixes -->
+<script src="prefixfree.min.js"></script>
+
+</head>
+<body data-duration="45">
+
+<header id="intro" class="slide">
+	<h2>Fun & Flair with CSS3 Animations</h2>
+
+	<p class="attribution">By @alexisgoldstein</p>
+
+  <div class="waves-container" style="position:fixed;bottom:0;">
+    <div class="waves-x"></div>
+    <div class="waves-y"></div>
+  </div>
+  
+</header>
+
+<section id="waitwho">
+	<header class="slide">
+		<h2>Who?</h2>
+		<a href="http://amzn.to/QpIYV2"><img id="book2" src="http://www-fp.pearsonhighered.com/bigcovers/0321839609.jpg" width="240"></a>
+		<a href="http://amzn.to/PNUlaK"><img src="http://www.fuckyeahtml5.com/wp-content/uploads/2011/06/html5realworld.jpeg" width="210"></a>
+		<ul>
+		  <li>Front-end Developer</li>
+		  <li>Co-author of <a href="http://amzn.to/PNUlaK">HTML5 & CSS3 for the Real World</a></li>
+		  <li>Author of <a href="http://amzn.to/QpIYV2">Learning CSS3 Animations & Transitions</a></li>
+		  <li>In my other life, I <a href="http://alexisgoldstein.tumblr.com/">talk about financial reform on MSNBC</a></li>
+	  </ul>
+	</header>
+	</section>
+	<section>
+  	<header class="slide">
+  		<h2>One last thing...</h2>
+      <img src="img/talk-cats.png" style="text-align:center !importnat;">
+  	</header>
+  	</section>
+	<section>
+	  <header class="slide">
+	  <h2>an·i·mat·ed</h2> 
+	    <br>
+    a : endowed with life or the qualities of life : alive<br>
+    b : full of movement and activity <br>
+    c : full of vigor and spirit : lively
+    </header>
+	</section>
+	
+	<section>
+	  <header class="slide">
+	    <h2>Animations can:</h2>
+        <ul>
+          <li>Provide Visual Feedback in Response to User Actions</li>
+          <li>Create more immersive websites</li>
+          <li>Be used progressively on top of existing content</li>                            
+        </ul>		  
+    </header>
+	</section>
+
+  <section>
+	  <header class="slide">
+	    <h2>Two Animation Routes in CSS3:</h2>
+        <ul>
+          <li>Transitions</li>
+            <ul>
+              <li>Animates between a starting and ending value</li>
+              <li>Faster performance, because the browser does the interpolation</li>
+              <li>No built-in way to repeat the animation</li>
+            </ul>
+          <li>Keyframe Animations (aka CSS Animations)</li>
+            <ul>
+              <li>Allows for animating between intermediate points</li>
+              <li>Many additional options, including repeating the animation</li>
+            </ul>
+          
+        </ul>		  
+    </header>
+	</section>
+   <section>
+  	  <header class="slide">
+  	    <h2>CSS Transition Basics:</h2>
+          <p>
+            Basic syntax, with the two required properties:
+  <br>          
+  <pre>
+   transition-property: <em>transition-property</em>;
+   transition-duration: <em>transition-duration</em>;
+  </pre>
+          </p>
+      </header>
+  	</section>
+
+  <section>
+	  <header class="slide">
+	    <h2>CSS Transition Basics:</h2>
+        <p>Example:
+          <pre><code>
+  transition-property: width;
+  transition-duration: 2s;	
+          </code></pre>
+        </p>
+          <p>Whichever element you assign these properties to, when the width changes, it’ll change over the course of 2 seconds.</p>
+    </header>
+	</section>
+
+  <section id="input-grow">
+	  <style scoped>
+	  .slide { text-align: center;}
+	  </style>
+    <header class="slide">
+		<h2>Widening an input element on focus</h2>
+		<form class="grow-left">    
+      <input type="search" class="search-field">  
+    </form>
+		<br>
+		<p><a href="http://dabblet.com/gist/5291548" target="_blank">http://dabblet.com/gist/5291548</a></p>
+		</header>
+	</section>
+
+  <section id="triangles">
+    <header class="slide">
+		<h2>Moving a Navigation Pointer</h2>
+		<p>We can combine a bit of jQuery with some transitions on <code>margin</code> to create a moving navigation pointer: <a href="http://jsbin.com/inolor/1/" target="_blank">http://jsbin.com/inolor/1/</a></p>
+    <pre>
+      <code lang="css">
+#triangle { transition: margin-left 1s; }
+#triangle.home {  margin-left: 4.2em; }
+#triangle.about {  margin-left: 10.2em; }
+#triangle.blog {  margin-left: 16.2em; }
+      </code>
+    </pre>
+		</header>
+	</section>
+
+	<section id="lightbox">
+	  <header class="slide">
+	    <h2>Multiple Transitions</h2>		 
+        <div class="delayed lightbox" data-originalstyle data-originalcsstext></div>
+        <p>You can specify multiple transitions over different durations on a single element. Lea Verou had a great example of this in her <a href="http://www.youtube.com/watch?feature=player_embedded&v=3ikye7Qc7Ak#!">W3Conf talk</a> earlier this year.</p>
+        <p style="text-align:center;"><a href="http://dabblet.com/gist/5292968">http://dabblet.com/gist/5292968</a></p>
+        
+    </header>
+	</section>
+		
+		<section id="lightbox">
+  	  <header class="slide">
+  	    <h2>Multiple Transitions</h2>		 
+          <div class="delayed lightbox" data-originalstyle data-originalcsstext></div>
+          <pre>
+            <code>
+.lightbox.delayed {
+  /* bg image stuff...*/
+  width: 0;
+  margin: 1em auto;
+  padding: .5em;
+  transition: 1s width, 1s 1s height;
+}
+
+.lightbox.current {
+  width: 60%;
+  height: 60%;
+  transition: 1s height, 1s 1s width;
+}
+            </code>
+          </pre>
+      </header>
+  	</section>
+  	<section>
+  	  <header class="slide" style="background: url('http://www.funnycutepics.com/wp/wp-content/uploads/2011/10/kitten_drinking_beer.jpg') center no-repeat, white;background-size:cover;">
+  	  <p>This is a kitten drinking beer</p>
+  	  </header>
+	  </section>
+	<section>
+	  <header class="slide">
+	    <h2>CSS Animations</h2>
+        <div id="container">
+          <div id="spring"></div>
+        </div>		 
+        <p>CSS Animations allow us to create more complex animations, with multiple
+          points between the beginning and the end of the animation.</p>
+    </header>
+	</section>
+	
+	<section>
+	  <header class="slide">
+	    <h2>CSS Animation Basics</h2>
+    	<p>the keyframes @ rule:</p>
+      <pre>
+      <code lang="css">
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotateY(0); }
+	100%   { -webkit-transform: rotateY(-360deg); }
+
+-webkit-animation: spin 18s infinite linear;
+      </code>
+      </pre>
+    </header>
+	</section>
+	
+		<section>
+  	  <header class="slide">
+  	    <h2>CSS Animation Basics</h2>
+      	<p><em>animation</em> shorthand syntax</p>
+      	<pre><code>
+animation: spin 18s infinite alternate forwards linear;
+        </code>
+        </pre>
+        <p>
+        <em>animation</em> is the shortcut syntax for the following properties:
+        <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>,<code>animation-direction</code>, <code>animation-fill-mode</code> and <code>animation-timing-function</code>
+        </p>
+      </header>
+  	</section>
+  
+    <section>
+  	  <header class="slide">
+  	    <h2>A Rotating Eye</h2>
+    <aside style="float:right;">
+    	<div class="pirate">
+        <div class="eye">
+      </div>
+    </aside>
+    <p><a href="http://dabblet.com/gist/5293715">http://dabblet.com/gist/5293715</a></p>
+    </header>
+    </section>
+
+  <section>
+	  <header class="slide">
+	    <h2>A Bouncing Spring</h2>
+	    <div id="container">
+        <div id="spring"></div>
+      </div>>		 
+        
+      	 <pre>
+            <code>
+@-webkit-keyframes spring {
+0% { -webkit-transform: scale(1); }
+30% { -webkit-transform: scale(1, 0.5); }
+/* quickly snaps back, longer than before */
+40% { -webkit-transform: scale(1, 1.5); }
+/* continues...*/
+}            
+
+#spring {
+-webkit-animation: spring 2.8s 3;
+}
+            </code>
+          </pre>
+      </header>
+	</section>
+	  
+  <section>
+	  <header class="slide">
+	    <h2>Rocking the Boat</h2>
+      <aside class="boat"></aside> 
+        <ul>
+          <li>Provide Visual Feedback in Response to User Actions</li>
+          <li>foo</li>
+          <li>bar</li>                            
+        </ul>		 
+    </header>
+	</section>
+	
+	<section>
+	  <header class="slide">
+	    <h2>Ocean Waves</h2>
+      <div class="waves-container">
+        <div class="waves-x"></div>
+        <div class="waves-y"></div>
+      </div>
+    </header>
+	</section>
+  <section id="test"> 
+	  <header class="slide" data-originalstyle data-originalcsstext>
+  		<h2>CSS Snippets</h2>
+  		<form>
+  		  <input type="search" id="searchbox">
+		  </form>
+  		<p>Edit the following CSS code:</p>
+  		<textarea class="snippet" data-raw>#searchbox { width: 5em;}</textarea>
+  		</header>
+  	</section>
+  	
+
+
+    	<section class="slide" id="animation-demo">
+    		<h2>CSS Snippets: raw CSS</h2>
+    		<textarea class="snippet" data-raw>@keyframes rainbow {
+    	from, to { background: red }
+    	16% { background: yellow }
+    	33% { background: green }
+    	50% { background: aqua }
+    	66% { background: blue }
+    	83% { background: fuchsia }
+    }
+
+    #animation-demo { animation: 30s rainbow infinite; }</textarea>
+    	</section>
+  	
+	<section class="slide">
+		<h2>Credit</h2>
+		<ul>
+		  <li>Presentation Deck: <a href="https://github.com/leaverou/csss/">CSSS</a> & Lightbox example by <a href="lea.verou.me">Lea Verou</a></li>
+		  </li>
+		  <li><a href="http://openclipart.org/detail/224/alien-pirate-by-ffolke">Pirate Alien open clip art</a> by <a href="http://openclipart.org/user-detail/ffolke">ffolke</a></li>
+		  <li><a href="http://openclipart.org/detail/168079/segelyacht-by-jogdragoon">Sailboat open clip art</a> by <a href="http://openclipart.org/user-detail/jogdragoon">jogdragoon</a></li>
+		  <li>Waves based on <a href="http://openclipart.org/detail/105271/waves-border-by-motofix">open clip art</a> by <a href="http://openclipart.org/user-detail/motofix">motofix</a></li> 
+	  </ul>
+	</section>
+</section>
+
+<footer class="slide">
+	<h2>Thank you!</h2>
+	<ul>
+	<li>alexis at alexisgo dot com</li>
+	<li>@alexisgoldstein</li>
+	<li>Code Samples from this talk: <a href="http://alexisgo.github.com/html5devconf-code/">http://alexisgo.github.com/html5devconf-code/</a></li>
+	<li>Code samples from my CSS3 Animations book: <a href="http://alexisgo.github.com/LearningCSSAnimations/">http://alexisgo.github.com/LearningCSSAnimations/</a></li>
+</footer>
+
+<script src="slideshow.js"></script>
+
+<!-- Uncomment the plugins you need-->
+
+<script src="plugins/css-edit.js"></script>
+<script src="plugins/css-snippets.js"></script>
+
+<script src="plugins/css-controls.js"></script>
+<script src="plugins/code-highlight.js"></script>
+<script>var slideshow = new SlideShow();</script>
+	
+</body>
+</html>

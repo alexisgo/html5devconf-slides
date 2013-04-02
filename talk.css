@@ -1,0 +1,148 @@
+#intro {
+	background: rgba(0,0,0,.7);
+	padding: 0;
+	border: 0;
+}
+
+#intro h2 {
+	width: 80%;
+	margin: 5% auto 0;
+}
+
+#intro .attribution {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	font-size: 100%;
+	line-height: .8;
+	color: rgba(0,0,0,.7);
+	text-shadow: none;
+	background: url(img/rainbow-wood.jpg) bottom;
+	padding:.6em 0;
+	overflow: hidden;
+}
+
+#waitwho img {
+  border: 3px solid white;
+  float: right;
+  -webkit-transform: rotateZ(-5deg);
+}
+
+#waitwho #book2 {
+ -webkit-transform: rotateZ(15deg);
+ position:relative;
+ z-index: 2;
+}
+
+.lightbox.delayed {
+  width: 0;
+  margin: 1em auto;
+  padding: .5em;
+  background: url('http://placekitten.com/300/200') center, white;
+  background-size: cover;
+  background-clip: content-box, border-box;
+  transition: 1s width, 1s 1s height;
+  /* by default, delayed items are opacity 0, need this to override*/
+  opacity: 1 !important;
+}
+
+.lightbox.current {
+  width: 60%;
+  height: 60%;
+  
+  transition: 1s height, 1s 1s width;
+  
+}
+
+#searchbox {
+  width: 10em;
+}
+
+form.grow-left {  text-align:center;  }  
+
+.search-field {    -webkit-transition: width 0.8s;    width: 8em;        }    
+.search-field:focus {    width: 12em;  }
+
+#css-controls-demo label {
+	display: block;
+}
+
+@-webkit-keyframes rock {
+  from { 
+    -webkit-transform: rotateZ(-2deg);
+  }
+  to {
+    -webkit-transform: rotateZ(4deg);
+  }
+}
+
+
+.slide aside.boat {
+  background-image: url('http://alexisgo.github.com/sailboat/img/Segelyacht_400w.svg');
+  background-size: cover;
+  width: 270px;
+  height: 350px;
+  margin-bottom: -20px;
+  float:right;
+       
+  -webkit-animation: rock 2s infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes oceanrise {
+  to {
+    -webkit-transform: scale(1,1.4);
+   }
+ }
+
+
+ @-webkit-keyframes wavespass {
+   from {
+     background-position: 0% 0%;
+   }
+   to {
+     background-position: -3% 0%;
+   }
+ }
+
+.waves-container { 
+   height: 24px;
+   width: 100%;
+}
+.waves-x, .waves-y {
+  background-size: cover;
+  height: 26.608px;
+  background: url('http://alexisgo.github.com/sailboat/img/bluewaves_one.svg') repeat-x transparent !important;
+  
+}
+ .waves-x {
+   -webkit-animation: wavespass 2s infinite linear alternate forwards;
+ }
+
+ @-webkit-keyframes wavesrise {
+   from {
+     -webkit-transform: translate3d(0,-10px, 0);
+   }
+   to {
+     -webkit-transform: translate3d(0,10px,0);
+   }
+ }
+ 
+ .waves-y {
+   -webkit-transform-origin: 50% 100%;
+   -webkit-animation: oceanrise 2s infinite linear alternate forwards;
+
+   position:relative; 
+   top: -26.608px;
+   left: -70px;
+   
+   background-position: -24% 100%;
+ }
+@media only screen and (-webkit-min-device-pixel-ratio:0) {
+/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+	object[type="image/svg+xml"] {
+		display: none;
+	}
+	
+	#intro h1 {
+	}
+}
