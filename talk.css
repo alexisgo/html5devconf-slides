@@ -54,6 +54,50 @@
   
 }
 
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotateY(0); }
+	100%   { -webkit-transform: rotateY(-360deg); }
+}
+#wrapper {
+	-webkit-perspective: 800;
+	/* -webkit-perspective-origin
+	 * Sets the origin of the -webkit-perspective property 
+	 * 
+	 * This property effectively sets the x and y position 
+	 * at which the viewer appears to be looking at the 
+	 * children of the element. 
+	 * 
+	 * The default value is 50% for both x and y coordinates.
+	 */
+	-webkit-perspective-origin: 50% 25%;
+	width: 600px;
+	margin: 30px auto 0 auto;
+}
+
+#shape {
+	margin: 0 auto;
+	height: 360px;
+	width: 490px;
+	/*-webkit-transform-style: preserve-3d
+	 * 
+	 *The preserve-3d transform style  
+	 * ensures that child elements follow 
+	 * the three dimensional motion rather 
+	 * than staying flat 
+	 */
+	-webkit-transform-style: preserve-3d;
+	/* with -webkit-animation we specify
+	 * how long we want our named animation to last,
+	 * how many times it should repeat, and what
+	 * is the timing function 
+	 * see: http://css-tricks.com/snippets/css/webkit-keyframe-animation-syntax/
+	 */
+	-webkit-animation: spin 18s infinite linear;
+	
+	background-image: url('http://alexisgo.com/AOLHTML5/record.png');
+}
+
+
 #searchbox {
   width: 10em;
 }
@@ -62,6 +106,108 @@ form.grow-left {  text-align:center;  }
 
 .search-field {    -webkit-transition: width 0.8s;    width: 8em;        }    
 .search-field:focus {    width: 12em;  }
+
+@keyframes "colorChange" {
+ 0% {
+    background-color: lightblue;
+ }
+ 33% {
+    background-color: blue;
+ }
+ 66% {
+    background-color: pink;
+ }
+ 100% {
+    background-color: purple;
+ }
+
+}
+
+@-moz-keyframes colorChange {
+ 0% {
+   background-color: lightblue;
+ }
+ 33% {
+   background-color: blue;
+ }
+ 66% {
+   background-color: pink;
+ }
+ 100% {
+   background-color: purple;
+ }
+
+}
+
+@-webkit-keyframes "colorChange" {
+ 0% {
+   background-color: lightblue;
+ }
+ 33% {
+   background-color: blue;
+ }
+ 66% {
+   background-color: pink;
+ }
+ 100% {
+   background-color: purple;
+ }
+
+}
+
+@-ms-keyframes "colorChange" {
+ 0% {
+   background-color: lightblue;
+ }
+ 33% {
+   background-color: blue;
+ }
+ 66% {
+   background-color: pink;
+ }
+ 100% {
+   background-color: purple;
+ }
+
+}
+
+@-o-keyframes "colorChange" {
+ 0% {
+   background-color: lightblue;
+ }
+ 33% {
+   background-color: blue;
+ }
+ 66% {
+   background-color: pink;
+ }
+ 100% {
+   background-color: purple;
+ }
+
+}
+
+
+.fillmode {  
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+
+  -webkit-animation: colorChange 2s;
+  -moz-animation: colorChange 2s;
+  -ms-animation: colorChange 2s;
+  -o-animation: colorChange 2s;
+  animation: colorChange 2s;
+}
+
+.fillmode.persist {
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+}
 
 #css-controls-demo label {
 	display: block;
@@ -80,12 +226,17 @@ form.grow-left {  text-align:center;  }
 .slide aside.boat {
   background-image: url('http://alexisgo.github.com/sailboat/img/Segelyacht_400w.svg');
   background-size: cover;
-  width: 270px;
-  height: 350px;
+	width: 150px;
+	height: 200px;
   margin-bottom: -20px;
   float:right;
-       
   -webkit-animation: rock 2s infinite ease-in-out alternate;
+
+}
+
+.slide aside.boat.desktop {
+	width: 270px;
+	height: 350px;
 }
 
 @-webkit-keyframes oceanrise {

@@ -43,6 +43,7 @@
 		<a href="http://amzn.to/PNUlaK"><img src="http://www.fuckyeahtml5.com/wp-content/uploads/2011/06/html5realworld.jpeg" width="210"></a>
 		<ul>
 		  <li>Front-end Developer</li>
+		  <li>Teacher with <a href="http://marakana.com">Marakana</a></li>
 		  <li>Co-author of <a href="http://amzn.to/PNUlaK">HTML5 & CSS3 for the Real World</a></li>
 		  <li>Author of <a href="http://amzn.to/QpIYV2">Learning CSS3 Animations & Transitions</a></li>
 		  <li>In my other life, I <a href="http://alexisgoldstein.tumblr.com/">talk about financial reform on MSNBC</a></li>
@@ -54,7 +55,20 @@
   		<h2>One last thing...</h2>
       <img src="img/talk-cats.png" style="text-align:center !importnat;">
   	</header>
-  	</section>
+	</section>
+
+	<section>
+  	<header class="slide">
+  		<h2>Some Questions for You</h2>
+  		<ul>
+  		  <li>Who has used CSS Transitions?</li>
+  		  <li class="delayed">Who has used CSS Animations?</li>
+  		  <img class="delayed" src="http://826valencia.org/store/wordpress/wp-content/uploads/2011/11/12603_DPT_V4_hookhand_02.png" alt="the pirate store in San Francisco's 'Nice to Meet you' Poster" style="float:right;">
+  		  <li class="delayed">Who has visited <a href="http://826valencia.org/store/" target="_blank">the Pirate Store</a> in the Mission?</li>  		  
+		  </ul>
+  	</header>
+	</section>
+
 	<section>
 	  <header class="slide">
 	  <h2>an·i·mat·ed</h2> 
@@ -71,7 +85,7 @@
         <ul>
           <li>Provide Visual Feedback in Response to User Actions</li>
           <li>Create more immersive websites</li>
-          <li>Be used progressively on top of existing content</li>                            
+          <li>Be used progressively on top of existing content (have an image? why not animate it!)</li>                            
         </ul>		  
     </header>
 	</section>
@@ -122,12 +136,34 @@
     </header>
 	</section>
 
+  <section>
+	  <header class="slide">
+	    <h2>CSS Transition Properties:</h2>
+        <p>Additional Transition Properties:
+          <ul>
+            <li><code>transition-timing-function</code></li>
+            <ul>
+              <li><a href="http://www.the-art-of-web.com/css/timing-function/" target="_blank">Timing Function Illustrated</a></li>
+               <li><a href="http://cubic-bezier.com/#.17,.67,.83,.67">Make your own Timing Function!</a></li>
+            </ul>
+            <li><code>transition-delay</code></li>
+          </ul>
+        </p>
+          <p>transition shorthand:
+                    <pre><code>
+transition: transition-property transition-duration transition-delay transition-timing-function;
+transition: background-color 1s 2s ease;
+                    </code></pre>
+                    </p>
+    </header>
+	</section>
   <section id="input-grow">
 	  <style scoped>
 	  .slide { text-align: center;}
 	  </style>
     <header class="slide">
 		<h2>Widening an input element on focus</h2>
+		<p>Inspiration: <a href="http://www.delta.com/" target="_blank">Delta.com</a></p>
 		<form class="grow-left">    
       <input type="search" class="search-field">  
     </form>
@@ -138,11 +174,13 @@
 
   <section id="triangles">
     <header class="slide">
-		<h2>Moving a Navigation Pointer</h2>
+		<h2>A Navigation Pointer</h2>
+		Inspiration: <a href="http://www.shareagift.com/pages/Landing_Page.aspx" target="_blank">http://www.shareagift.com/pages/Landing_Page.aspx</a>
+		<br><br>
 		<p>We can combine a bit of jQuery with some transitions on <code>margin</code> to create a moving navigation pointer: <a href="http://jsbin.com/inolor/1/" target="_blank">http://jsbin.com/inolor/1/</a></p>
     <pre>
-      <code lang="css">
-#triangle { transition: margin-left 1s; }
+      <code>
+#triangle { <span style="color:yellow;">transition: margin-left 1s;</span> }
 #triangle.home {  margin-left: 4.2em; }
 #triangle.about {  margin-left: 10.2em; }
 #triangle.blog {  margin-left: 16.2em; }
@@ -156,7 +194,7 @@
 	    <h2>Multiple Transitions</h2>		 
         <div class="delayed lightbox" data-originalstyle data-originalcsstext></div>
         <p>You can specify multiple transitions over different durations on a single element. Lea Verou had a great example of this in her <a href="http://www.youtube.com/watch?feature=player_embedded&v=3ikye7Qc7Ak#!">W3Conf talk</a> earlier this year.</p>
-        <p style="text-align:center;"><a href="http://dabblet.com/gist/5292968">http://dabblet.com/gist/5292968</a></p>
+        <p style="text-align:center;"><a href="http://dabblet.com/gist/5292968" target="_blank">http://dabblet.com/gist/5292968</a></p>
         
     </header>
 	</section>
@@ -164,7 +202,6 @@
 		<section id="lightbox">
   	  <header class="slide">
   	    <h2>Multiple Transitions</h2>		 
-          <div class="delayed lightbox" data-originalstyle data-originalcsstext></div>
           <pre>
             <code>
 .lightbox.delayed {
@@ -172,23 +209,27 @@
   width: 0;
   margin: 1em auto;
   padding: .5em;
-  transition: 1s width, 1s 1s height;
+<span style="color:yellow;">transition: <span style="color:orange;">width</span> 1s,  <span style="color:orange;">height</span> 1s 1s;</span>
 }
 
 .lightbox.current {
   width: 60%;
   height: 60%;
-  transition: 1s height, 1s 1s width;
+<span style="color:yellow;">transition: <span style="color:orange;">height</span> 1s, <span style="color:orange;">width</span> 1s 1s;</span>
 }
             </code>
           </pre>
       </header>
   	</section>
+  	
+
   	<section>
   	  <header class="slide" style="background: url('http://www.funnycutepics.com/wp/wp-content/uploads/2011/10/kitten_drinking_beer.jpg') center no-repeat, white;background-size:cover;">
   	  <p>This is a kitten drinking beer</p>
   	  </header>
 	  </section>
+	  
+	  
 	<section>
 	  <header class="slide">
 	    <h2>CSS Animations</h2>
@@ -209,7 +250,7 @@
 @-webkit-keyframes spin {
 	0% { -webkit-transform: rotateY(0); }
 	100%   { -webkit-transform: rotateY(-360deg); }
-
+}
 -webkit-animation: spin 18s infinite linear;
       </code>
       </pre>
@@ -218,19 +259,52 @@
 	
 		<section>
   	  <header class="slide">
+  	    <h2>Spin Me Right Round, Baby</h2>
+
+        <div id="wrapper">
+        	<div id="shape"></div>
+        </div>
+        <br>
+        <p>Source: <a href="http://alexisgo.com/AOLHTML5/webkitanimspin.html">http://alexisgo.com/AOLHTML5/webkitanimspin.html</a>
+      </header>
+  	</section>
+		<section>
+  	  <header class="slide">
   	    <h2>CSS Animation Basics</h2>
-      	<p><em>animation</em> shorthand syntax</p>
       	<pre><code>
 animation: spin 18s infinite alternate forwards linear;
         </code>
         </pre>
-        <p>
         <em>animation</em> is the shortcut syntax for the following properties:
         <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>,<code>animation-direction</code>, <code>animation-fill-mode</code> and <code>animation-timing-function</code>
-        </p>
       </header>
   	</section>
   
+    		<section>
+      	  <header class="slide">
+      	    <h2>animation-fill-mode</h2>
+      	    <aside style="float:right;">
+      	      <div class="fillmode"></div>
+      	    </aside>
+            <p>One of the optional animation properties that is very important to understand is animation-fill-mode. The values you can set this property to are <code>forwards</code>, <code>backwards</code>, <code>both</code> or <code>none</code>.</p>         
+            <br>
+            <p>This property defines whether or not changes made to properties during the animation persist after the animation. The default is <code>none</code>, which means any styles added during the animation go away once it ends.</p>
+            <aside style="float:right;">
+      	      <div class="fillmode persist"></div>
+      	    </aside>
+      	    <br>
+              <p>Setting <code>animation-fill-mode: forwards;</code> will ensure that any changes made during the animation persist after it. 
+               </header>
+      	</section>
+        <section>
+      	  <header class="slide">
+      	    <h2>Animate.css</h2>
+       
+        <p>A very helpful starting point for CSS Animations is <a href="http://daneden.me/animate/" target="_blank">Animate.css</a></p>
+        </header>
+        </section>
+
+
     <section>
   	  <header class="slide">
   	    <h2>A Rotating Eye</h2>
@@ -248,8 +322,7 @@ animation: spin 18s infinite alternate forwards linear;
 	    <h2>A Bouncing Spring</h2>
 	    <div id="container">
         <div id="spring"></div>
-      </div>>		 
-        
+      </div>		 
       	 <pre>
             <code>
 @-webkit-keyframes spring {
@@ -260,61 +333,109 @@ animation: spin 18s infinite alternate forwards linear;
 /* continues...*/
 }            
 
-#spring {
--webkit-animation: spring 2.8s 3;
-}
+#spring { -webkit-animation: spring 2.8s 3; }
             </code>
           </pre>
       </header>
 	</section>
-	  
+	 
+	   <section>
+   	  <header class="slide">
+   	    <h2>Don't Just Background-Image, Animate</h2>
+          <p>A great way to add animations to your sites is to take existing
+            static images and add either subtle looping animations (via CSS animations), or transitions triggered by user actions.</p>
+            <br>
+            <ul>
+              <li>Inspiration for simple transitions: <a href="http://strikedebt.org/" target="_blank">Strike Debt</a></li>
+              <li>Example for looping animation: <a href="http://alexisgo.github.com/html5devconf-code/sailboat/sailboat.html">I'M ON A BOAT!</a></li>
+            </ul>
+       </header>
+   	</section>
+   	 
   <section>
 	  <header class="slide">
 	    <h2>Rocking the Boat</h2>
-      <aside class="boat"></aside> 
-        <ul>
-          <li>Provide Visual Feedback in Response to User Actions</li>
-          <li>foo</li>
-          <li>bar</li>                            
-        </ul>		 
+      <aside class="boat desktop"></aside> 
+       <pre>
+          <code>
+@keyframes rock {
+ from { transform: rotateZ(-2deg); }
+ to {  transform: rotateZ(4deg); }            
+}
+
+animation: rock 2s infinite ease-in-out alternate;
+          </code>
+        </pre>
     </header>
 	</section>
 	
 	<section>
 	  <header class="slide">
-	    <h2>Ocean Waves</h2>
-      <div class="waves-container">
-        <div class="waves-x"></div>
-        <div class="waves-y"></div>
-      </div>
+	    <h2>Varying Boat Size with Media Queries</h2>
+      <aside class="boat"></aside> 
+       <pre>
+          <code>
+.main aside {
+	width: 150px;
+	height: 200px;
+}
+          </code>
+        </pre>
+        <aside class="boat desktop"></aside> 
+               <pre>
+                  <code>
+@media only screen and (min-width: 768px) {
+  .main aside {
+  	width: 270px;
+  	height: 350px;
+  }
+}  
+                  </code>
+                </pre>
+
     </header>
 	</section>
-  <section id="test"> 
-	  <header class="slide" data-originalstyle data-originalcsstext>
-  		<h2>CSS Snippets</h2>
-  		<form>
-  		  <input type="search" id="searchbox">
-		  </form>
-  		<p>Edit the following CSS code:</p>
-  		<textarea class="snippet" data-raw>#searchbox { width: 5em;}</textarea>
-  		</header>
+	
+		<section>
+  	  <header class="slide">
+  	    <h2>Ocean Waves</h2>
+        <div class="waves-container">
+          <div class="waves-x"></div>
+          <div class="waves-y"></div>
+        </div>
+      </header>
   	</section>
   	
-
-
-    	<section class="slide" id="animation-demo">
-    		<h2>CSS Snippets: raw CSS</h2>
-    		<textarea class="snippet" data-raw>@keyframes rainbow {
-    	from, to { background: red }
-    	16% { background: yellow }
-    	33% { background: green }
-    	50% { background: aqua }
-    	66% { background: blue }
-    	83% { background: fuchsia }
-    }
-
-    #animation-demo { animation: 30s rainbow infinite; }</textarea>
-    	</section>
+	<section>
+	  <header class="slide">
+	    <h2>Ocean Waves</h2>
+	    <pre><code>
+@keyframes wavespass {
+ from {  background-position: 0% 0%; }
+ to { background-position: -3% 0%; }
+}
+animation: wavespass 2s infinite linear alternate forwards;
+      </code></pre>
+      <div class="waves-container">
+        <div class="waves-x"></div>
+      </div>
+      </header>
+	</section>
+	
+		<section>
+  	  <header class="slide">
+  	    <h2>Ocean Waves</h2>
+        <pre><code>
+@keyframes oceanrise {
+  to { -webkit-transform: scale(1,1.4); }
+ }
+animation: oceanrise 2s infinite linear alternate forwards;
+        </code></pre>
+        <div class="waves-container">
+          <div class="waves-y"></div>
+        </div>
+      </header>
+  	</section>
   	
 	<section class="slide">
 		<h2>Credit</h2>
