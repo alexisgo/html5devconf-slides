@@ -18,58 +18,142 @@
 	color: rgba(0,0,0,.7);
 	text-shadow: none;
 	background: url(img/rainbow-wood.jpg) bottom;
-	padding:.6em 0;
+	padding: .6em 0;
 	overflow: hidden;
 }
 
 #waitwho img {
-  border: 3px solid white;
-  float: right;
-  -webkit-transform: rotateZ(-5deg);
+	border: 3px solid white;
+	float: right;
+
+	-webkit-transform: rotateZ(-5deg);
+	-moz-transform: rotateZ(-5deg);
+	-o-transform: rotateZ(-5deg);
+	-ms-transform: rotateZ(-5deg);
+	transform: rotateZ(-5deg);
 }
 
 #waitwho #book2 {
- -webkit-transform: rotateZ(15deg);
- position:relative;
- z-index: 2;
+	-webkit-transform: rotateZ(15deg);
+	-moz-transform: rotateZ(15deg);
+	-o-transform: rotateZ(15deg);
+	-ms-transform: rotateZ(15deg);
+	transform: rotateZ(15deg);
+	position: relative;
+	z-index: 2;
 }
 
 .lightbox.delayed {
-  width: 0;
-  margin: 1em auto;
-  padding: .5em;
-  background: url('http://placekitten.com/300/200') center, white;
-  background-size: cover;
-  background-clip: content-box, border-box;
-  transition: 1s width, 1s 1s height;
-  /* by default, delayed items are opacity 0, need this to override*/
-  opacity: 1 !important;
+	width: 0;
+	margin: 1em auto;
+	padding: .5em;
+	background: url('http://placekitten.com/300/200') center, white;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+
+	-webkit-background-clip: content-box, border-box;
+	-moz-background-clip: content-box, border-box;
+	background-clip: content-box, border-box;
+
+	-webkit-transition: 1s width, 1s 1s height;
+	-moz-transition: 1s width, 1s 1s height;
+	-o-transition: 1s width, 1s 1s height;
+	-ms-transition: 1s width, 1s 1s height;
+
+	transition: 1s width, 1s 1s height; /* by default, delayed items are opacity 0, need this to override*/
+opacity: 1 !important;
 }
 
 .lightbox.current {
-  width: 60%;
-  height: 60%;
-  
-  transition: 1s height, 1s 1s width;
-  
+	width: 60%;
+	height: 60%;
+
+	-webkit-transition: 1s height, 1s 1s width;
+	-moz-transition: 1s height, 1s 1s width;
+	-o-transition: 1s height, 1s 1s width;
+	-ms-transition: 1s height, 1s 1s width;
+	transition: 1s height, 1s 1s width;
 }
 
-@-webkit-keyframes spin {
-	0% { -webkit-transform: rotateY(0); }
-	100%   { -webkit-transform: rotateY(-360deg); }
+@keyframes "spin" {
+ 0% {
+    -webkit-transform: rotateY(0);
+   	-moz-transform: rotateY(0);
+   	-o-transform: rotateY(0);
+   	-ms-transform: rotateY(0);
+   	transform: rotateY(0);
+ }
+ 100% {
+    -webkit-transform: rotateY(-360deg);
+   	-moz-transform: rotateY(-360deg);
+   	-o-transform: rotateY(-360deg);
+   	-ms-transform: rotateY(-360deg);
+   	transform: rotateY(-360deg);
+ }
+
 }
+
+@-moz-keyframes spin {
+ 0% {
+   -moz-transform: rotateY(0);
+   transform: rotateY(0);
+ }
+ 100% {
+   -moz-transform: rotateY(-360deg);
+   transform: rotateY(-360deg);
+ }
+
+}
+
+@-webkit-keyframes "spin" {
+ 0% {
+   -webkit-transform: rotateY(0);
+   transform: rotateY(0);
+ }
+ 100% {
+   -webkit-transform: rotateY(-360deg);
+   transform: rotateY(-360deg);
+ }
+
+}
+
+@-ms-keyframes "spin" {
+ 0% {
+   -ms-transform: rotateY(0);
+   transform: rotateY(0);
+ }
+ 100% {
+   -ms-transform: rotateY(-360deg);
+   transform: rotateY(-360deg);
+ }
+
+}
+
+@-o-keyframes "spin" {
+ 0% {
+   -o-transform: rotateY(0);
+   transform: rotateY(0);
+ }
+ 100% {
+   -o-transform: rotateY(-360deg);
+   transform: rotateY(-360deg);
+ }
+
+}
+
 #wrapper {
-	-webkit-perspective: 800;
-	/* -webkit-perspective-origin
-	 * Sets the origin of the -webkit-perspective property 
-	 * 
-	 * This property effectively sets the x and y position 
-	 * at which the viewer appears to be looking at the 
-	 * children of the element. 
-	 * 
+	-webkit-perspective: 800; /* -webkit-perspective-origin
+	 * Sets the origin of the -webkit-perspective property
+	 *
+	 * This property effectively sets the x and y position
+	 * at which the viewer appears to be looking at the
+	 * children of the element.
+	 *
 	 * The default value is 50% for both x and y coordinates.
 	 */
-	-webkit-perspective-origin: 50% 25%;
+-webkit-perspective-origin: 50% 25%;
 	width: 600px;
 	margin: 30px auto 0 auto;
 }
@@ -77,35 +161,45 @@
 #shape {
 	margin: 0 auto;
 	height: 360px;
-	width: 490px;
-	/*-webkit-transform-style: preserve-3d
-	 * 
-	 *The preserve-3d transform style  
-	 * ensures that child elements follow 
-	 * the three dimensional motion rather 
-	 * than staying flat 
+
+	width: 490px; /*-webkit-transform-style:  preserve-3d
+	 *
+	 *The preserve-3d transform style
+	 * ensures that child elements follow
+	 * the three dimensional motion rather
+	 * than staying flat
 	 */
-	-webkit-transform-style: preserve-3d;
-	/* with -webkit-animation we specify
+
+-webkit-transform-style: preserve-3d; /* with -webkit-animation we specify
 	 * how long we want our named animation to last,
 	 * how many times it should repeat, and what
-	 * is the timing function 
-	 * see: http://css-tricks.com/snippets/css/webkit-keyframe-animation-syntax/
+	 * is the timing function
+	 * see:  http://css-tricks.com/snippets/css/webkit-keyframe-animation-syntax/
 	 */
-	-webkit-animation: spin 18s infinite linear;
-	
+-webkit-animation: spin 18s infinite linear;
 	background-image: url('http://alexisgo.com/AOLHTML5/record.png');
 }
 
-
 #searchbox {
-  width: 10em;
+	width: 10em;
 }
 
-form.grow-left {  text-align:center;  }  
+form.grow-left {
+	text-align: center;
+}
 
-.search-field {    -webkit-transition: width 0.8s;    width: 8em;        }    
-.search-field:focus {    width: 12em;  }
+.search-field {
+	-webkit-transition: width 0.8s;
+	-moz-transition: width 0.8s;
+	-o-transition: width 0.8s;
+	-ms-transition: width 0.8s;
+	transition: width 0.8s;
+	width: 8em;
+}
+
+.search-field:focus {
+	width: 12em;
+}
 
 @keyframes "colorChange" {
  0% {
@@ -156,9 +250,9 @@ form.grow-left {  text-align:center;  }
 }
 
 @-ms-keyframes "colorChange" {
- 0% {
-   background-color: lightblue;
- }
+	0%  {
+	 background-color: lightblue;
+}
  33% {
    background-color: blue;
  }
@@ -171,10 +265,10 @@ form.grow-left {  text-align:center;  }
 
 }
 
-@-o-keyframes "colorChange" {
- 0% {
-   background-color: lightblue;
- }
+ @-o-keyframes "colorChange" {
+	0%  {
+	 background-color: lightblue;
+}
  33% {
    background-color: blue;
  }
@@ -187,51 +281,112 @@ form.grow-left {  text-align:center;  }
 
 }
 
+ .fillmode {
+	width: 100px;
+	height: 100px;
+	background-color: lightblue;
 
-.fillmode {  
-  width: 100px;
-  height: 100px;
-  background-color: lightblue;
-
-  -webkit-animation: colorChange 2s;
-  -moz-animation: colorChange 2s;
-  -ms-animation: colorChange 2s;
-  -o-animation: colorChange 2s;
-  animation: colorChange 2s;
+	-webkit-animation: colorChange 2s;
+	-moz-animation: colorChange 2s;
+	-ms-animation: colorChange 2s;
+	-o-animation: colorChange 2s;
+	animation: colorChange 2s;
 }
 
 .fillmode.persist {
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -ms-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 
 #css-controls-demo label {
 	display: block;
 }
 
-@-webkit-keyframes rock {
-  from { 
+@keyframes "rock" {
+ from {
     -webkit-transform: rotateZ(-2deg);
-  }
-  to {
+   	-moz-transform: rotateZ(-2deg);
+   	-o-transform: rotateZ(-2deg);
+   	-ms-transform: rotateZ(-2deg);
+   	transform: rotateZ(-2deg);
+ }
+ to {
     -webkit-transform: rotateZ(4deg);
-  }
+   	-moz-transform: rotateZ(4deg);
+   	-o-transform: rotateZ(4deg);
+   	-ms-transform: rotateZ(4deg);
+   	transform: rotateZ(4deg);
+ }
+
 }
 
+@-moz-keyframes rock {
+ from {
+   -moz-transform: rotateZ(-2deg);
+   transform: rotateZ(-2deg);
+ }
+ to {
+   -moz-transform: rotateZ(4deg);
+   transform: rotateZ(4deg);
+ }
+
+}
+
+@-webkit-keyframes "rock" {
+ from {
+   -webkit-transform: rotateZ(-2deg);
+   transform: rotateZ(-2deg);
+ }
+ to {
+   -webkit-transform: rotateZ(4deg);
+   transform: rotateZ(4deg);
+ }
+
+}
+
+@-ms-keyframes "rock" {
+ from {
+   -ms-transform: rotateZ(-2deg);
+   transform: rotateZ(-2deg);
+ }
+ to {
+   -ms-transform: rotateZ(4deg);
+   transform: rotateZ(4deg);
+ }
+
+}
+
+@-o-keyframes "rock" {
+ from {
+   -o-transform: rotateZ(-2deg);
+   transform: rotateZ(-2deg);
+ }
+ to {
+   -o-transform: rotateZ(4deg);
+   transform: rotateZ(4deg);
+ }
+
+}
 
 .slide aside.boat {
-  background-image: url('http://alexisgo.github.com/sailboat/img/Segelyacht_400w.svg');
-  background-size: cover;
+	background-image: url('http://alexisgo.github.com/sailboat/img/Segelyacht_400w.svg');
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	width: 150px;
 	height: 200px;
-  margin-bottom: -20px;
-  float:right;
-  -webkit-animation: rock 2s infinite ease-in-out alternate;
+	margin-bottom: -20px;
+	float: right;
 
+	-webkit-animation: rock 2s infinite ease-in-out alternate;
+	-moz-animation: rock 2s infinite ease-in-out alternate;
+	-ms-animation: rock 2s infinite ease-in-out alternate;
+	-o-animation: rock 2s infinite ease-in-out alternate;
+	animation: rock 2s infinite ease-in-out alternate;
 }
 
 .slide aside.boat.desktop {
@@ -239,61 +394,208 @@ form.grow-left {  text-align:center;  }
 	height: 350px;
 }
 
-@-webkit-keyframes oceanrise {
-  to {
+@keyframes "oceanrise" {
+ to {
     -webkit-transform: scale(1,1.4);
-   }
+   	-moz-transform: scale(1,1.4);
+   	-o-transform: scale(1,1.4);
+   	-ms-transform: scale(1,1.4);
+   	transform: scale(1,1.4);
  }
 
-
- @-webkit-keyframes wavespass {
-   from {
-     background-position: 0% 0%;
-   }
-   to {
-     background-position: -3% 0%;
-   }
- }
-
-.waves-container { 
-   height: 24px;
-   width: 100%;
 }
-.waves-x, .waves-y {
-  background-size: cover;
-  height: 26.608px;
-  background: url('http://alexisgo.github.com/sailboat/img/bluewaves_one.svg') repeat-x transparent !important;
-  
+
+@-moz-keyframes oceanrise {
+ to {
+   -moz-transform: scale(1,1.4);
+   transform: scale(1,1.4);
+ }
+
 }
- .waves-x {
-   -webkit-animation: wavespass 2s infinite linear alternate forwards;
+
+@-webkit-keyframes "oceanrise" {
+ to {
+   -webkit-transform: scale(1,1.4);
+   transform: scale(1,1.4);
  }
 
- @-webkit-keyframes wavesrise {
-   from {
-     -webkit-transform: translate3d(0,-10px, 0);
-   }
-   to {
-     -webkit-transform: translate3d(0,10px,0);
-   }
- }
- 
- .waves-y {
-   -webkit-transform-origin: 50% 100%;
-   -webkit-animation: oceanrise 2s infinite linear alternate forwards;
+}
 
-   position:relative; 
-   top: -26.608px;
-   left: -70px;
-   
-   background-position: -24% 100%;
+@-ms-keyframes "oceanrise" {
+ to {
+   -ms-transform: scale(1,1.4);
+   transform: scale(1,1.4);
  }
+
+}
+
+@-o-keyframes "oceanrise" {
+ to {
+   -o-transform: scale(1,1.4);
+   transform: scale(1,1.4);
+ }
+
+}
+
+@keyframes "wavespass" {
+ from {
+    background-position: 0% 0%;
+ }
+ to {
+    background-position: -3% 0%;
+ }
+
+}
+
+@-moz-keyframes wavespass {
+ from {
+   background-position: 0% 0%;
+ }
+ to {
+   background-position: -3% 0%;
+ }
+
+}
+
+@-webkit-keyframes "wavespass" {
+ from {
+   background-position: 0% 0%;
+ }
+ to {
+   background-position: -3% 0%;
+ }
+
+}
+
+@-ms-keyframes "wavespass" {
+ from {
+   background-position: 0% 0%;
+ }
+ to {
+   background-position: -3% 0%;
+ }
+
+}
+
+@-o-keyframes "wavespass" {
+ from {
+   background-position: 0% 0%;
+ }
+ to {
+   background-position: -3% 0%;
+ }
+
+}
+
+.waves-container {
+	height: 24px;
+	width: 100%;
+}
+
+.waves-x,.waves-y {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	height: 26.608px;
+	background: url('http://alexisgo.github.com/sailboat/img/bluewaves_one.svg') repeat-x transparent !important;
+}
+
+.waves-x {
+	-webkit-animation: wavespass 2s infinite linear alternate forwards;
+	-moz-animation: wavespass 2s infinite linear alternate forwards;
+	-ms-animation: wavespass 2s infinite linear alternate forwards;
+	-o-animation: wavespass 2s infinite linear alternate forwards;
+	animation: wavespass 2s infinite linear alternate forwards;
+}
+
+@keyframes "wavesrise" {
+ from {
+    -webkit-transform: translate3d(0,-10px, 0);
+   	-moz-transform: translate3d(0,-10px, 0);
+   	-o-transform: translate3d(0,-10px, 0);
+   	-ms-transform: translate3d(0,-10px, 0);
+   	transform: translate3d(0,-10px, 0);
+ }
+ to {
+    -webkit-transform: translate3d(0,10px,0);
+   	-moz-transform: translate3d(0,10px,0);
+   	-o-transform: translate3d(0,10px,0);
+   	-ms-transform: translate3d(0,10px,0);
+   	transform: translate3d(0,10px,0);
+ }
+
+}
+
+@-moz-keyframes wavesrise {
+ from {
+   -moz-transform: translate3d(0,-10px, 0);
+   transform: translate3d(0,-10px, 0);
+ }
+ to {
+   -moz-transform: translate3d(0,10px,0);
+   transform: translate3d(0,10px,0);
+ }
+
+}
+
+@-webkit-keyframes "wavesrise" {
+ from {
+   -webkit-transform: translate3d(0,-10px, 0);
+   transform: translate3d(0,-10px, 0);
+ }
+ to {
+   -webkit-transform: translate3d(0,10px,0);
+   transform: translate3d(0,10px,0);
+ }
+
+}
+
+@-ms-keyframes "wavesrise" {
+ from {
+   -ms-transform: translate3d(0,-10px, 0);
+   transform: translate3d(0,-10px, 0);
+ }
+ to {
+   -ms-transform: translate3d(0,10px,0);
+   transform: translate3d(0,10px,0);
+ }
+
+}
+
+@-o-keyframes "wavesrise" {
+ from {
+   -o-transform: translate3d(0,-10px, 0);
+   transform: translate3d(0,-10px, 0);
+ }
+ to {
+   -o-transform: translate3d(0,10px,0);
+   transform: translate3d(0,10px,0);
+ }
+
+}
+
+.waves-y {
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+
+	-webkit-animation: oceanrise 2s infinite linear alternate forwards;
+	-moz-animation: oceanrise 2s infinite linear alternate forwards;
+	-ms-animation: oceanrise 2s infinite linear alternate forwards;
+	-o-animation: oceanrise 2s infinite linear alternate forwards;
+	animation: oceanrise 2s infinite linear alternate forwards;
+	position: relative;
+	top: -26.608px;
+	left: -70px;
+	background-position: -24% 100%;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio:0) {
-/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
-	object[type="image/svg+xml"] {
-		display: none;
-	}
-	
-	#intro h1 {
-	}
+	/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+object[type="image/svg+xml"] {
+	display: none;
+}
+
 }
